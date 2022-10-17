@@ -1,0 +1,31 @@
+defaults:
+  device: "cuda"
+  seed: 42
+  output_path: "./results"
+  verbose: True
+  func_evals: 60
+  refit_training: True
+  use_benchmark: True
+  use_test_benchmark: True
+  min_budget: 3
+  max_budget: 27
+  eta: 3
+  retrain_budget: 50
+
+dehb:
+  type: 'dehb'
+  output_path: "./results/dehb_results"
+  n_workers: 1
+
+smac:
+  type: 'smac'
+  output_path: "./results/smac_results"
+  n_workers: 10
+
+dehbws:
+  type: 'dehbws'
+  output_path: "./results/dehbws_results"
+  n_workers: 1
+  use_benchmark: False
+  warm: True
+

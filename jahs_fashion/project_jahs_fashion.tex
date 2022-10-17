@@ -1,0 +1,76 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{a4wide}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+
+\input{../common.tex}
+
+\newcommand{\due}{{\bf This project is due on \duedatepaper.} }
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\lhead{Due: \duedatepaper}
+\chead{{\bf AutoML}\\Final Project}
+\rhead{\lectors\\ \semester}
+\cfoot{Page \thepage}
+
+\begin{document}
+
+\tfp
+
+	\section*{Joint Architecture Search and Hyperparameter Optimization of a Convolutional Neural Network}
+
+		Your task is to automatically improve and analyze the performance of a neural network for a \emph{fashion classification}\footnote{\url{https://github.com/zalandoresearch/fashion-mnist}} dataset.
+		Instead of only considering the architecture and hyperparameters seperately you should build a system to \textbf{jointly optimize them}.
+
+        You are allowed a \textbf{maximum runtime of 6 hours}.
+        We have provided a standard vision model as a baseline.
+		In the end, you should convince us that you indeed improved the performance of the network when compared to the default approach.
+		To this end, you could consider one or several of the following:
+		\begin{itemize}
+			\item (must) Apply HPO to obtain a well-performing hyperparameter configuration (e.g., BO or EAs);
+			\item (must) Apply NAS (e.g., BOHB or DARTS) to improve the architecture of the network;
+			\item (can) Extend the configuration space to cover preprocessing, data augmentation and regularization;
+			\item (can) Apply one or several of the speedup techniques for HPO/NAS;
+			\item (can) Apply meta-learning, such as algorithm selection or warmstarting, to improve the performance;
+			\item (can) Apply a learning to learn approach to learn how to optimize the network;
+     		\item (can) Determine the importance of the algorithm's hyperparameters;
+		\end{itemize}
+		\noindent
+		From the optional approaches (denoted by \textit{can}), pick the ones that you think are most appropriate.
+		To evaluate your approach please choose the way you evaluate well; you could consider the following:
+		\begin{itemize}
+			\item Measure and compare against the default performance of the given network;
+			\item Plot a confusion matrix;
+			\item Plot the performance of your AutoML approach over time;
+			\item Apply a statistical test.
+		\end{itemize}
+
+		\newpage
+		\noindent
+		You are allowed to use all scripts and tools you already know from the exercises; however, you are not limited to them.
+		Overall, you should respect the following constraints:
+		\begin{itemize}
+			\item \textbf{Metric:}
+			\begin{itemize}
+				\item The final performance has to be measured in terms of missclassification error.
+			\end{itemize}
+			\item \textbf{Experimental Constraints:}
+			\begin{itemize}
+				\item Your code for making design decisions should run no longer than $6$ hours (without additional validation) on a single machine.
+				\item You can use any kind of hardware that is available to you. For example, you could also consider using Google Colab (which repeatedly offers a VM with a GPU for at most 12h for free) or Amazon SageMaker (which offers quite some resources for free if you are a first-time customer). \textit{Don't forget to state in your paper what kind of hardware you used!}
+			\end{itemize}
+		\end{itemize}
+
+
+        \gccs
+
+		\newpage
+		\grading
+
+%\vspace*{\fill}\\
+\end{document}
